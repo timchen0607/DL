@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <textarea id="text" cols="100" rows="50"></textarea>
+
+    <script>
+      //               夜校        日校        技優
+      const album = ["AVQm53w", "LEwobX0", "D7ukhlv"];
+      const time = [
+        [18, 24],
+        [8, 14],
+        [12, 18],
+      ];
+      const studentA = [
+        [
+          { id: "40641455", score: "30" },
+          { id: "40741431", score: "0" },
+          { id: "40741454", score: "35" },
+          { id: "40771407", score: "10" },
+          { id: "40941467", score: "75" },
+          { id: "41041401", score: "45" },
+          { id: "41041402", score: "80" },
+          { id: "41041403", score: "65" },
+          { id: "41041404", score: "50" },
+          { id: "41041405", score: "30" },
+          { id: "41041406", score: "60" },
+          { id: "41041409", score: "85" },
+          { id: "41041410", score: "65" },
+          { id: "41041411", score: "85" },
+          { id: "41041412", score: "45" },
+          { id: "41041413", score: "75" },
+          { id: "41041414", score: "35" },
+          { id: "41041416", score: "15" },
+          { id: "41041418", score: "30" },
+          { id: "41041419", score: "45" },
+          { id: "41041420", score: "35" },
+          { id: "41041422", score: "55" },
+          { id: "41041424", score: "25" },
+          { id: "41041425", score: "0" },
+          { id: "41041428", score: "5" },
+          { id: "41041430", score: "45" },
+          { id: "41041432", score: "50" },
+          { id: "41041434", score: "5" },
+          { id: "41041435", score: "25" },
+          { id: "41041437", score: "65" },
+          { id: "41041438", score: "20" },
+          { id: "41041441", score: "55" },
+          { id: "41041444", score: "0" },
+          { id: "41041446", score: "50" },
+          { id: "41041448", score: "25" },
+          { id: "41041450", score: "75" },
+          { id: "41041451", score: "65" },
+          { id: "41041456", score: "0" },
+          { id: "41041462", score: "25" },
+        ],
+        [
+          { id: "10961113", score: "0" },
+          { id: "10961117", score: "10" },
+          { id: "40641440", score: "0" },
+          { id: "40741430", score: "10" },
+          { id: "40841415", score: "0" },
+          { id: "41041415", score: "30" },
+          { id: "41041417", score: "0" },
+          { id: "41041421", score: "25" },
+          { id: "41041426", score: "0" },
+          { id: "41041427", score: "25" },
+          { id: "41041429", score: "10" },
+          { id: "41041431", score: "50" },
+          { id: "41041439", score: "15" },
+          { id: "41041440", score: "0" },
+          { id: "41041442", score: "0" },
+          { id: "41041443", score: "5" },
+          { id: "41041447", score: "25" },
+          { id: "41041453", score: "40" },
+          { id: "41041454", score: "0" },
+          { id: "41041455", score: "20" },
+          { id: "41041458", score: "0" },
+          { id: "41041459", score: "0" },
+          { id: "41041461", score: "0" },
+          { id: "41041463", score: "0" },
+        ],
+      ];
+      const studentB = [
+        [
+          { id: "10961112", score: "0" },
+          { id: "40543155", score: "15" },
+          { id: "40641107", score: "0" },
+          { id: "40641145", score: "0" },
+          { id: "40823137", score: "75" },
+          { id: "40823138", score: "70" },
+          { id: "40841150", score: "90" },
+          { id: "40842127", score: "0" },
+          { id: "40850152", score: "75" },
+          { id: "40941434", score: "20" },
+          { id: "40941445", score: "0" },
+          { id: "40941451", score: "0" },
+          { id: "40941455", score: "20" },
+          { id: "41041101", score: "75" },
+          { id: "41041102", score: "65" },
+          { id: "41041103", score: "90" },
+          { id: "41041104", score: "75" },
+          { id: "41041105", score: "80" },
+          { id: "41041106", score: "65" },
+          { id: "41041107", score: "20" },
+          { id: "41041108", score: "65" },
+          { id: "41041109", score: "55" },
+          { id: "41041110", score: "50" },
+          { id: "41041111", score: "85" },
+          { id: "41041112", score: "85" },
+          { id: "41041113", score: "45" },
+          { id: "41041114", score: "70" },
+          { id: "41041115", score: "30" },
+          { id: "41041116", score: "85" },
+          { id: "41041118", score: "95" },
+          { id: "41041119", score: "40" },
+          { id: "41041120", score: "80" },
+          { id: "41041121", score: "0" },
+          { id: "41041122", score: "30" },
+          { id: "41041123", score: "15" },
+          { id: "41041124", score: "90" },
+          { id: "41041125", score: "90" },
+          { id: "41041126", score: "25" },
+          { id: "41041127", score: "70" },
+          { id: "41041128", score: "25" },
+          { id: "41041130", score: "90" },
+          { id: "41041131", score: "65" },
+          { id: "41041132", score: "50" },
+          { id: "41041133", score: "5" },
+          { id: "41041134", score: "25" },
+          { id: "41041135", score: "75" },
+          { id: "41041137", score: "0" },
+          { id: "41041138", score: "50" },
+          { id: "41041140", score: "15" },
+          { id: "41041141", score: "35" },
+          { id: "41041142", score: "75" },
+          { id: "41041143", score: "75" },
+          { id: "41041144", score: "55" },
+          { id: "41041145", score: "75" },
+          { id: "41041146", score: "55" },
+          { id: "41041147", score: "25" },
+          { id: "41041148", score: "60" },
+          { id: "41041149", score: "70" },
+          { id: "41041151", score: "0" },
+          { id: "41041153", score: "0" },
+        ],
+        [
+          { id: "40641142", score: "40" },
+          { id: "40741124", score: "70" },
+          { id: "40941403", score: "25" },
+          { id: "40941448", score: "40" },
+          { id: "40941452", score: "25" },
+          { id: "40941468", score: "0" },
+          { id: "40941469", score: "25" },
+          { id: "41041117", score: "70" },
+          { id: "41041129", score: "80" },
+          { id: "41041136", score: "0" },
+          { id: "41041150", score: "75" },
+          { id: "41041152", score: "0" },
+        ],
+      ];
+      const studentC = [
+        [
+          { id: "10961113", score: "0" },
+          { id: "41041201", score: "80" },
+          { id: "41041202", score: "50" },
+          { id: "41041203", score: "45" },
+          { id: "41041204", score: "65" },
+          { id: "41041206", score: "30" },
+          { id: "41041207", score: "30" },
+          { id: "41041208", score: "60" },
+          { id: "41041209", score: "70" },
+          { id: "41041210", score: "65" },
+          { id: "41041211", score: "65" },
+          { id: "41041212", score: "75" },
+          { id: "41041213", score: "5" },
+          { id: "41041214", score: "50" },
+          { id: "41041216", score: "90" },
+          { id: "41041217", score: "80" },
+          { id: "41041219", score: "75" },
+          { id: "41041220", score: "75" },
+          { id: "41041221", score: "85" },
+          { id: "41041222", score: "45" },
+          { id: "41041223", score: "95" },
+          { id: "41041224", score: "75" },
+          { id: "41041225", score: "75" },
+          { id: "41041226", score: "85" },
+        ],
+        [
+          { id: "10961117", score: "0" },
+          { id: "40641149", score: "45" },
+          { id: "41041215", score: "0" },
+        ],
+      ];
+      const studentList = [studentA[0], studentB[0], studentC[0]];
+      const date = ["0519", "0526", "0602", "0609", "0616"]; // 設定題目日期
+      const exScope = 70; // 設定題數範圍
+      const exScopeOffset = 0; // 設定從第幾題開始
+      const index = 0; // 選擇班級
+      console.log(studentList[index].length);
+
+      const data = [];
+      const student = studentList[index].sort((a, b) => b.score - a.score);
+      const count = student.length / 3;
+      let high = student.slice(0, count);
+      let middle = student.slice(count, count * 2);
+      let low = student.slice(count * 2, count * 3);
+      // 亂數重整陣列
+      const shuffle = (arr) => {
+        for (let i = arr.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [arr[i], arr[j]] = [arr[j], arr[i]];
+        }
+        return arr;
+      };
+      // 產生學生
+      const generateStu = () => {
+        high.forEach((stu, idx) => {
+          data.push({
+            id: stu.id,
+            level: "High",
+            album: album[index],
+            time: time[index],
+          });
+        });
+        middle.forEach((stu, idx) => {
+          data.push({
+            id: stu.id,
+            level: "Middle",
+            album: album[index],
+            time: time[index],
+          });
+        });
+        low.forEach((stu, idx) => {
+          data.push({
+            id: stu.id,
+            level: "Low",
+            album: album[index],
+            time: time[index],
+          });
+        });
+      };
+      // 產生每周題目與分群
+      const generateEx = () => {
+        date.forEach((d) => {
+          high = shuffle([...high]);
+          middle = shuffle([...middle]);
+          low = shuffle([...low]);
+          const allEx = [...Array(exScope).keys()];
+          const ex = [];
+          ex.push(...shuffle([...allEx].splice(exScopeOffset, exScope)));
+          ex.push(...shuffle([...allEx].splice(exScopeOffset, exScope)));
+          high.forEach((item, idx) => {
+            if (
+              ex[idx * 3 + 0] == ex[idx * 3 + 1] ||
+              ex[idx * 3 + 1] == ex[idx * 3 + 2] ||
+              ex[idx * 3 + 0] == ex[idx * 3 + 2]
+            )
+              console.error("重複重複重複重複重複重複重複");
+            data.push({
+              id: high[idx].id,
+              exList: {
+                [d]: {
+                  ex: [
+                    ...ex
+                      .slice(idx * 3 + 0, idx * 3 + 3)
+                      .map((x) => "Ex" + (x + 1).toString().padStart(2, "0")),
+                  ],
+                  peer: [middle[idx].id, low[idx].id],
+                },
+              },
+            });
+            data.push({
+              id: middle[idx].id,
+              exList: {
+                [d]: {
+                  ex: [
+                    ...ex
+                      .slice(idx * 3 + 0, idx * 3 + 3)
+                      .map((x) => "Ex" + (x + 1).toString().padStart(2, "0")),
+                  ],
+                  peer: [high[idx].id, low[idx].id],
+                },
+              },
+            });
+            data.push({
+              id: low[idx].id,
+              exList: {
+                [d]: {
+                  ex: [
+                    ...ex
+                      .slice(idx * 3 + 0, idx * 3 + 3)
+                      .map((x) => "Ex" + (x + 1).toString().padStart(2, "0")),
+                  ],
+                  peer: [high[idx].id, middle[idx].id],
+                },
+              },
+            });
+          });
+        });
+      };
+      // generateEx();
+      document.getElementById("text").value = JSON.stringify(data);
+    </script>
+  </body>
+</html>
